@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Add a Dish";
+}	
+
+	@using ChefsNDishes.Models
+	@model Dish
+
+<h1>Add a Dish!</h1>
+
+<form asp-action="SubmitDish" asp-controller="Home" method="POST">
+	<p><span class="red" asp-validation-for="Name"></span></p>
+    <p>Name of Dish:</p>
+    <p><input asp-for="Name"></p>
+
+    <p><span class="red" asp-validation-for="Calories"></span></p>
+    <p># of Calories:</p>
+    <p><input asp-for="Calories"></p>
+
+	<p><span class="red" asp-validation-for="Description"></span></p>
+    <p>Description:</p>
+    <p><textarea input asp-for="Description"></textarea></p>
+
+	<p><span class="red" asp-validation-for="ChefId"></span></p>
+    <p>Chef's Name:
+    <select input asp-for="ChefId">
+        <option value="--">--</option>
+		@foreach (var chef in @ViewBag.AllChefs){
+			<option value=@chef.ChefId>@chef.FirstName @chef.LastName</option>
+		}
+    </select></p>
+
+    <p><span class="red" asp-validation-for="Tastiness"></span></p>
+    <p>Tastiness:
+    <select input asp-for="Tastiness">
+        <option value="--">--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select></p>
+
+    <p><input type="submit" class="btn btn-dark" value="Add Dish"></p>
+
+</form>
+
+<p><a href="/dishes"><button class="btn btn-danger">Cancel</button></a></p>

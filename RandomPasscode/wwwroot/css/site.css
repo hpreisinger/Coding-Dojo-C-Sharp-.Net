@@ -1,0 +1,11 @@
+﻿body {
+  text-align: center;
+}
+
+h2 {
+  display: inline-block;
+  width: 50%;
+  border: 3px solid black;
+  padding: 10px 10px 20px 10px;
+  margin: 10px 10px 20px 10px;
+}

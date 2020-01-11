@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Edit a Dish";
+}
+
+@using CRUDelicious.Models
+@model Dish
+
+<div class="container">
+    <h1>Edit Dish Name</h1>
+
+    <form action="/submit/edit/@Model.DishId" method="POST">
+    <p><span asp-validation-for="Name"></span></p>
+    <p>Name of Dish:</p>
+    <p><input asp-for="Name"></p>
+
+    <p><span asp-validation-for="Chef"></span></p>
+    <p>Chef's Name:</p>
+    <p><input asp-for="Chef"></p>
+
+    <p><span asp-validation-for="Calories"></span></p>
+    <p># of Calories:</p>
+    <p><input asp-for="Calories"></p>
+
+    <p><span asp-validation-for="Tastiness"></span></p>
+    <p>Tastiness:</p>
+    <p><select input asp-for="Tastiness">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select></p>
+
+    <p><span asp-validation-for="Description"></span></p>
+    <p>Description:</p>
+    <p><textarea input asp-for="Description"></textarea></p>
+    <p><input type="submit" class="btn btn-dark" value="Edit Dish"></p>
+
+</form>
+
+<p><a href="/ID"><button class="btn btn-danger">Cancel</button></a></p>
+
+</div>
