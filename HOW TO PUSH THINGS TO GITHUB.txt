@@ -1,0 +1,20 @@
+HOW TO PUSH THINGS TO GITHUB
+1. Make your project
+2. In the project folder:
+	git init
+	git add --all
+	git commit -m "initial commit (local machine)"
+3. Make a new repository on GitHub (or grab the URL of an existing one)
+4. Back in the project folder:
+	git remote add origin **URL HERE**
+	git pull origin master --allow-unrelated-histories
+	git push origin master
+!!!!!!!!!!
+
+If you want to push to a different branch:
+1. Make a new branch on GitHub
+2. In the project folder:
+	git checkout -b **BRANCH NAME**
+	git add --all
+	git commit -m "**message**"
+	git push -u origin **BRANCH NAME**
